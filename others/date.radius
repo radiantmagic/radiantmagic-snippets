@@ -1,0 +1,5 @@
+<!--
+  The Radius-Tag Snippet renders the actual year
+-->
+
+<r:date format="%Y" for="now" />

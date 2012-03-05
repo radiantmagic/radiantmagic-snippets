@@ -1,0 +1,7 @@
+<!--
+  This Radius-Tag renders a navigation with pages of the
+  first two levels. If you want to include a page set
+  'In navigation' to 'Yes'.
+-->
+
+<r:nav include_root="true" depth="2" expand_all="true" />

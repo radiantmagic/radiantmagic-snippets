@@ -1,0 +1,30 @@
+<!--
+
+-->
+
+<r:children:each limit="5" order="asc" by="position">
+<article class="news">
+
+h2. <r:link />
+  
+div{.posted}. Veröffentlicht von <r:author /> am <r:date format="%d.%m.%Y" /> <em>|</em> <r:link>Ganzen Artikel lesen</r:link>
+
+<r:content part="summary" />
+
+</article>
+</r:children:each>
+
+<r:find url="/news/">
+  <ul>
+    <li><a href="/news/">Alle</a></li>
+    <r:children:each order="desc" by="published_at" limit="40">
+      <r:header>
+        <li>
+          <a href="<r:date for="published_at" format="/aktuelles/%Y/" />">
+            <r:date for="published_at" format="%Y" />
+          </a>
+        </li>
+      </r:header>
+    </r:children:each>
+  </ul>
+</r:find>

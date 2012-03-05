@@ -1,0 +1,74 @@
+<!--
+  This Snippets creates a slideshow with images from the
+  gallery 'myGallery' and a navigation.
+  
+  Use this Snippet if you need more control or want to
+  include multiple slideshows on a page.
+-->
+
+<div class="slideshow">
+
+  <div class="without-js">
+    <div class="js-note">Please activate JavaScript in your browser to see this slideshow!</div>
+  </div>
+  
+  <div class="with-js" style="display:none;">
+    <p id="slideshow-nav">
+      <a id="prev" href="#"><img src="/images/slideshow/prev.png" alt="Zurück" /></a> 
+      <a id="play" href="#"><img src="/images/slideshow/play.png" alt="Start" /></a> 
+      <a id="pause" href="#"><img src="/images/slideshow/pause.png" alt="Pause" /></a>
+      <a id="next" href="#"><img src="/images/slideshow/next.png" alt="Vor" /></a> 
+    </p>
+    <div class="gallery">
+      <r:gallery:items name="myGallery">
+        <div class="slide">
+          <r:gallery_item:image size="600px" />
+          <p>
+            <r:gallery_item:caption />
+          </p>
+        </div>
+      </r:gallery:items>
+    </div>
+  </div>
+  
+</div>
+
+<!--
+  Include this code in your Layout.
+-->
+
+<script src="//cdn.radiantmagic.com/libs/jquery/1.7.1/min.js"></script>
+<script src="//cdn.radiantmagic.com/libs/jquery-cycle/2.9999/min.js"></script>
+
+<!--
+  Include this JavaScript code in your application.js.
+-->
+
+$('.without-js').hide();
+$('.with-js').show( function() {
+
+  $('#pause').click(function() { 
+    $('.gallery').cycle('pause');
+    $('#pause').hide();
+    $('#play').show();
+    return false;
+  });
+  
+  $('#play').click(function() {
+    $('.gallery').cycle('resume');
+    $('#play').hide();
+    $('#pause').show();
+    return false;
+  });
+
+  $('.gallery').cycle({ 
+     fx:    'fade', 
+     pause:  3,
+     prev:   '#prev', 
+     next:   '#next',
+     width:  600, 
+     height: 640,
+     pager:  '#nav'
+  });
+
+});

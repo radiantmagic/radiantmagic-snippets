@@ -1,0 +1,7 @@
+<!--
+  This Radius-Tags creates a slideshow with images from
+  the gallery 'myGallery' with navigation and an image
+  size of 400px. The JavaScript is included automatically.
+-->
+
+<r:gallery:show name="myGallery" size="400px" height="450" navigation="true" timeout="1500" />

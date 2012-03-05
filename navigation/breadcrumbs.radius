@@ -1,0 +1,5 @@
+<!--
+  Renders a breadcrumb snippet.
+-->
+
+<r:breadcrumbs separator=" > " />

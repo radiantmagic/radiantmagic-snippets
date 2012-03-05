@@ -1,0 +1,30 @@
+<!--
+  Copy this snippet to the sitemap page
+-->
+
+<ul id="sitemap">
+  <r:find url="/">
+  <li><r:link />
+    <ul>
+      <r:snippet name="sitemap" />
+    </ul>
+  </li>
+  </r:find>
+</ul>
+
+<!--
+  Create a snippet with the name 'sitemap'
+-->
+
+<r:children:each>
+  <r:unless_content part="no-map">
+  <li>
+    <r:link />
+    <r:if_children>
+    <ul class="second">
+      <r:snippet name="sitemap" />
+    </ul>
+    </r:if_children>
+  </li>
+  </r:unless_content>
+</r:children:each>

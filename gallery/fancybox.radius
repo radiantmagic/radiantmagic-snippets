@@ -1,0 +1,32 @@
+<!--
+  This Snippet creates a lightbox with images from the gallery 'myGallery'.
+-->
+
+<div class="lightbox-wrapper">
+ <r:gallery:items name="myGallery">
+   <r:gallery_item:image size="600px" />
+ </r:gallery:items>
+</div>
+
+<!--
+  Include this code in your Layout.
+-->
+
+<script src="//cdn.radiantmagic.com/libs/jquery/1.7.1/min.js"></script>
+<script src="//cdn.radiantmagic.com/libs/jquery-fancybox/2.0.5/min.js"></script>
+<link rel="stylesheet" media="screen" href="//cdn.radiantmagic.com/libs/jquery-fancybox/2.0.5/fancybox.css">
+
+<!--
+  Include this JavaScript code in your application.js.
+-->
+
+$(document).ready(function(){
+ jQuery('.lightbox-wrapper img').each( function(){
+   $(this).wrap('<a class="fancybox" rel="group" href="' + this.src + '" />');
+ });
+ $(".fancybox").fancybox( {
+	prevEffect : 'none',
+	nextEffect : 'none',
+	closeBtn   : false
+ });
+});

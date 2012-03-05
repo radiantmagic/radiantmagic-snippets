@@ -1,0 +1,5 @@
+<!--
+  Renders an webanalytics opt-out iframe.
+-->
+
+<r:piwik:opt_out lang="en" height="180px" />

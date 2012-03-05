@@ -1,0 +1,11 @@
+<!--
+  The Radius-Tag r:comment can be used in Snippets, Layouts and Pages.
+  Nothing inside a set of comment tags is rendered.
+-->
+
+<r:comment>
+  This is a multi line comment and the 
+  content will not be rendered in a page
+</r:comment>
+
+<r:comment>This is an one line comment and it will not be rendered in a page</r:comment>

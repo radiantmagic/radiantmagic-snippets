@@ -1,0 +1,8 @@
+<!--
+  Renders an encoded email javascript code to prevent emails bots collection
+-->
+
+<notextile>
+  <r:enkode_mailto email="info@example.com" link_text="info [at] example [dot] com" title_text="Send E-Mail" subject="[www.example.com] Request" />
+  <noscript>info [at] example [dot] com</noscript>
+</notextile>

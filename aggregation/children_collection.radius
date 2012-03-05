@@ -1,0 +1,18 @@
+<!--
+  Renders an unordered list with the content of the
+  summary page-part of all children pages.
+  
+  If no summary page-part is present it will fall
+  back to the content of the body page-part.
+-->
+
+<ul class="children-collector">
+<r:children:each>
+  <r:if_content part="summary">
+    <li><r:content part="summary" /></li>
+  </r:if_content>
+  <r:unless_content part="summary">
+    <li><r:content part="body" /></li>
+  </r:unless_content>
+</r:children:each>
+</ul>

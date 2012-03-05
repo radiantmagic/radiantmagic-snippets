@@ -1,0 +1,18 @@
+<!--
+  The Radius-Tag r:yield renders the snippet specified
+  in the name attribute within the context of a page.
+  
+  Sample:
+  
+  <r:snippet name="blue-box">
+    Content which will be rendered inside of the section
+    with the two classes box and blue.
+  </r:snippet>
+  
+  The following snippet should be saved in a snippet with
+  the name "blue-box" to try it out.
+-->
+
+<section class="box blue">
+  <r:yield />
+</section>
