@@ -1,0 +1,16 @@
+<!--
+
+-->
+
+<r:find url="/de/blog/">
+<section id="blog-preview">
+  <r:children:each order="desc" by="published_at" paginated="true" per_page="5" previous_label="Zurück" next_label="Weiter">
+  <article>
+    <h1><r:link /></h1>
+    <r:content part="summary" />
+    <a href="<r:url />">Weiter lesen...</a>
+  </article>
+  </r:children:each>
+</section>
+</r:find>
+
