@@ -1,0 +1,27 @@
+<!--
+  This Snippets wraps the image caption
+-->
+
+<figure style="width:231px;">
+  <r:assets:image id="3596" size="250px" />
+  <figcaption>
+    <r:assets:caption id="3596" />
+  </figcaption>
+</figure>
+
+<!--
+  Include this Sass code in your application.css.
+-->
+
+// Images with caption
+figure
+  padding: 5px
+  border: $border
+  float: left
+  margin-right: 20px
+  margin-bottom: 15px
+figcaption
+  margin-top: 6px
+  font-size: 90%
+  font-style: italic
+  text-align: center
