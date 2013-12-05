@@ -1,0 +1,11 @@
+<!--
+  This Snippets renders a link to a pdf to open
+  in a new window and a preview image inside.
+  
+  The size 'preview' makes sure to show the first
+  page of the pdf as an png-image.
+-->
+
+<r:assets:link id="12345" size="original" target="blank">
+ <r:assets:image id="12345" size="preview" />
+</r:assets:link>
