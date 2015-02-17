@@ -1,0 +1,7 @@
+<r:if_sitemap_xml>
+  <meta name="robots" content="index,follow">
+</r:if_sitemap_xml>
+
+<r:unless_sitemap_xml>
+  <meta name="robots" content="noindex,nofollow">
+</r:unless_sitemap_xml>

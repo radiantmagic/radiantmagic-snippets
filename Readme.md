@@ -4,4 +4,4 @@ A collection of useful and often required Radius-Tags for the [RadiantMagic](htt
 
 Contribution is highly appreciated! Please fork this repository and send a pull request.
 
-(c) 2012-2013 radiantmagic.com
+(c) 2012-2015 radiantmagic.com
