@@ -1,0 +1,41 @@
+<r:search>
+  <r:form submit="Suchen" url="/de/suche/" autofocus="true" />
+
+  <hr />
+
+  <r:results products="true" highlight="true" paginated="true" by="priority" order="desc" per_page="10" previous_label="Zurück" next_label="Weiter" exclude_pages="/de/">
+  <ul id="search-results">
+    <r:each>
+
+      <r:search:results:is_product>
+      <li class="product">
+          <h2><r:product:link /></h2>
+          <r:product:summary />
+      </li>
+      </r:search:results:is_product>
+
+      <r:search:results:is_page>
+      <li class="page">
+        <h2><r:link /></h2>
+        <r:truncate_and_strip length="250"><r:content/></r:truncate_and_strip>
+      </li>
+      </r:search:results:is_page>
+
+      <r:search:results:is_collection_page>
+      <li class="collection-page">
+        <h2><r:link /></h2>
+        <r:truncate_and_strip length="250"><r:content/></r:truncate_and_strip>
+      </li>
+      </r:search:results:is_collection_page>
+
+    </r:each>
+  </ul>
+  </r:results>
+
+  <r:empty>
+    <p>
+      <strong>Es wurden keine Ergebnisse mit Ihrer Suche nach "<r:search:query/>" gefunden.</strong>
+    </p>
+  </r:empty>
+
+</r:search>
