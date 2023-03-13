@@ -1,0 +1,85 @@
+<!--
+  To create a contact form thre parts of a page are required.
+  One for the formular, one for the mailer and one for the
+  email to send.
+  
+  Next the content for the formular:
+-->
+
+<r:mailer:form name="contact">
+  <fieldset>
+    <legend>&nbsp;<i class="fa fa-lock"></i>&nbsp;Sichere Übertragung&nbsp;</legend>
+
+    <p>
+      <r:if_error on="form"><span class="red"><r:mailer:if_error:message /></span><br /></r:if_error>
+    </p>
+
+    <p>
+      <label for="topic">Thema *</label>
+      <r:if_error on="topic"><span class="error">Das Feld darf nicht leer sein.</span></r:if_error>
+      <r:select name="topic" required="true" class="required" autofocus="autofocus">
+        <r:option></r:option>
+        <r:option>Neukunden Anfrage</r:option>
+        <r:option>Bestandskunden Support</r:option>
+      </r:select>
+    </p>
+    <p>
+      <label for="name">Name *</label>
+      <r:if_error on="name"><span class="error">Das Feld darf nicht leer sein.</span></r:if_error>
+      <r:text name="name" required="true" class="required" />
+    </p>
+    <p>
+      <label for="email">E-Mail *</label>
+      <r:if_error on="email"><span class="error">Das Feld darf nicht leer sein.</span></r:if_error>
+      <r:email name="email" required="true" class="required" />
+    </p>
+    <p>
+      <label for="subject">Betreff *</label>
+      <r:if_error on="subject"><span class="error">Das Feld darf nicht leer sein.</span></r:if_error>
+      <r:text name="subject" required="true" class="required" />
+    </p>
+    <p>
+      <label for="message">Ihre Nachricht *</label>
+      <r:if_error on="message"><span class="error">Das Feld darf nicht leer sein.</span></r:if_error>
+      <r:textarea name="message" required="true" class="required long" />
+    </p>
+    <p>
+      <label for="take_note">Einverständniserklärung *</label>
+      <r:if_error on="note_taken"><span class="error">Das Feld muss angewählt sein!</span></r:if_error>
+      <r:mailer:checkbox value="Ja" name="note_taken" required="true" /> Ich habe die <a href="/de/datenschutzhinweise/" target="_blank"> Datenschutzerklärung</a> gelesen und bin mit der Speicherung und Verarbeitung meiner oben angegebenen Daten zum Zweck der Kontaktaufnahme einverstanden.
+    </p>
+    <p>* Erforderliche Angaben</p>
+    <p>
+      <input type="submit" value="Absenden" />
+    </p>
+  </fieldset>
+</r:mailer:form>
+
+<!--
+  Mailer part:
+-->
+
+subject: "[www.example.com] request"
+reply_to_field: email
+from: info@example.com
+recipients: info@example.com
+redirect_to: /en/contact/follow-up/
+save_to_database: false
+skip_html_encoding: true
+
+<!--
+  Email part:
+-->
+
+Web-Request:
+
+Topic: <r:mailer:get name="topic"/>
+
+From:  <r:mailer:get name="name"/>
+Email:  <r:mailer:get name="email"/>
+
+GDPR Notice: <r:mailer:get name="note_taken"/>
+
+Subject: <r:mailer:get name="subject"/>
+
+<r:mailer:get name="message"/>

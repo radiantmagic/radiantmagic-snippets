@@ -1,0 +1,6 @@
+<!--
+  Renders an webanalytics javascript snippet without
+  matomo cookie usage (required by gdpr)
+-->
+
+<r:piwik:javascript disable_cookies="true" />
