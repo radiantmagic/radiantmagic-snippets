@@ -1,5 +1,0 @@
-<!--
-  Renders an asynchronous webanalytics javascript snippet.
--->
-
-<r:piwik:javascript asynchronous="true" />

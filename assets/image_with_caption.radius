@@ -1,13 +1,12 @@
 <!--
-  This Snippets wraps the image caption
+  This Snippets renders a html5 figure element with
+  an image and the image caption.
+  
+  A css class for the figure element can be applied
+  by the optional 'figure_class' parameter.
 -->
 
-<figure style="width:231px;">
-  <r:assets:image id="3596" size="250px" />
-  <figcaption>
-    <r:assets:caption id="3596" />
-  </figcaption>
-</figure>
+<r:assets:image id="3596" size="250px" figure="caption" />
 
 <!--
   Include this Sass code in your application.css.

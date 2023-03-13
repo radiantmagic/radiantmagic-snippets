@@ -1,8 +1,12 @@
 <!--
-  Renders an encoded email javascript code to prevent emails bots collection
+  Renders an encoded email javascript code to prevent
+  bots to collect emails. A js-fallback can be applied.
 -->
 
-<notextile>
-  <r:enkode_mailto email="info@example.com" link_text="info [at] example [dot] com" title_text="Send E-Mail" subject="[www.example.com] Request" />
-  <noscript>info [at] example [dot] com</noscript>
-</notextile>
+<r:enkode_mailto 
+  email="info@example.com"
+  link_text="info [at] example [dot] com"
+  title_text="Send E-Mail"
+  subject="[www.example.com] Request"
+  js_fallback="true"
+/>
